@@ -1,63 +1,27 @@
-# Nostr Profile Manager
+# 
 
-Lightweight typescript micro app for basic nostr profile management. Current USP is offline backup and restore.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
-Only javascript dependency is [nostr-tools](https://github.com/nbd-wtf/nostr-tools). no JS frameworks. no state management tools.
+## Development server
 
-## Live instances
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-- https://metadata.nostr.com/
+## Code scaffolding
 
-## Features
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Supported profile events: kind `0`, `10002` and `3`.
+## Build
 
-##### Backup and Restore
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-- [x] backup your profile events to offline browser storage
-- [x] review changes between backups
-  - [x] `0`
-  - [x] `10002`
-  - [x] `3`
-- [x] selectively restore previous versions
-- [x] download profile backup history as JSON file
-- [ ] restore backups from JSON file
+## Running unit tests
 
-##### Refine
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-- [x] Metadata
-  - [x] basic editing
-  - [x] nip05 verifiation
-  - [x] profile and banner previews
-  - [x] preserve, edit and remove custom properties
+## Running end-to-end tests
 
-- [x] Contacts
-  - [x] Add Contacts based on nip05, nip19 (npub, nprofile or naddr) or hex
-  - [x] keyword search profiles to find contacts
-  - [ ] keyword search profiles to find contacts of contacts
-  - [x] Remove Contacts
-  - [x] Edit petname and relay
-  - [ ] Suggestions Engine
-    - [ ] Contacts recommendation based off social graph
-    - [ ] Suggest updates to contact relay based on Contact's kind `10002` and `2` events
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-- [x] Relays
-  - [x] editable table of read / write relays kind `10002` event
-  - [ ] auto suggestion of `10002` event based on contact's relays if no event present
-  - [ ] evaluation of `10002` based on contact's
-  - [ ] decentralisation score to encourage users not to use the same relay
+## Further help
 
-- [ ] manage event distribution to relays
-  - [ ] Show which and how many relays return an each event (and including historic events)
-  - [ ] Show warning if selected write relays don't
-  - [ ] suggest republishing events (particularly `10002`) to spread them to more relays if appropriate
-
-- [ ] look far and wide for events
-    - cycle through all known relays to find current and previous versions of profile events to enable restoration. reccommended only when accessed through a VPN
-##### Lightweight
-- [ ] only javascript dependancy is nostr-tools (TODO: remove timeago)
-- [x] connects to the minimum number of relays
-  - [x] connect relays specified in `10002` or 3 default relays
-- [ ] minimises the number of open  websockets
-- [x] use blastr relay to send profile events far and wide
-- [ ] efficent (TODO: currently the 'Contacts' functionality is very inefficent)
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
